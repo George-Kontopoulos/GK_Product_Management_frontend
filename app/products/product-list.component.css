@@ -1,0 +1,32 @@
+thead{
+   color:#337AB7;
+}
+
+.tdstar{
+    width:150px;
+    max-width: 150px;
+    padding-right: 0;
+}
+
+.btndelete{
+    max-width: 150px;
+    padding-left: 0;
+}
+
+
+.glyphicon glyphicon-remove{
+    background-color: red;
+}
+
+.btnremove{
+    color: orangered;
+
+}
+
+.btn-default{
+    background-color: red;
+}
+
+.btn-primary-delall{
+    background-color:darkorange;
+}

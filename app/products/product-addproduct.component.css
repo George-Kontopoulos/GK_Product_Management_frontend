@@ -1,0 +1,28 @@
+thead{
+   color:#337AB7;
+}
+
+.row{
+    padding: 5px;
+    align-items: center;
+}
+
+.buttonrow{
+    margin: auto 0;
+}
+
+
+#submit, #reset {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 175px;
+}
+
+#reset {
+    
+}
+
+@media (max-width: 767px){
+
+
+}

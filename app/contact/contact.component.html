@@ -1,0 +1,160 @@
+
+<!--<form (ngSubmit)="save()">
+    <fieldset>
+        <div [ngClass]="{'has-error' : productNameVar.touched }">
+            <label for="productNameId">Product Name:</label>
+            <input id="productNameId" type="text"
+            placeholder="Product Name (required)"
+            minlength="3"
+            name="productName"
+            #productNameVar="ngModel"/>
+            <span *ngIf="productNameVar.touched ">
+                Please enter yoyr product name
+            </span>
+            </div>
+            
+            <button type="submit">Save</button>
+    </fieldset>
+    </form>-->
+
+<!--<form class="form-horizontal" (ngSubmit)="onUpdate(updateForm)" [formGroup]="updateForm" *ngIf='this.showForm'>
+ 
+ 
+ <div class="row">
+     <input style="visibility: hidden">
+ </div>
+
+  <div class="row">
+  <div><label for="name" class="col-sm-4" id="label">Product Name: </label>
+  <input formControlName="name" type="text" [(ngModel)]="product.name" class="col-sm-5" required="true"></div>
+  </div>
+  
+  <div class="row" >
+  <div><label for="node" class="col-sm-4" id="label">Product Code: </label>
+    <input formControlName="code" type="text" [(ngModel)]="product.code" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="available" class="col-sm-4" id="label">Available from: </label>
+    <input formControlName="available" type="datetime" [(ngModel)]="product.available" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="price" class="col-sm-4" id="label">Price: </label>
+  <input formControlName="price" type="number" [(ngModel)]="product.price" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="rating" class="col-sm-4" id="label">Rating: </label>
+  <input formControlName="rating" type="number" [(ngModel)]="product.rating" class="col-sm-5" required="true">
+  </div>
+  </div>
+<div class="row">
+     <input style="visibility: hidden">
+ </div>
+  <div class="row">
+    <div class=" col-sm-offset-4 col-xs-4">
+      <button type="submit" class="btn btn-primary" id="submit">Update Product</button>
+      <button type="reset" class="btn btn-primary" id="reset">Clear Form</button>
+    </div>
+  
+  </div> 
+
+<div class="row">
+     <input style="visibility: hidden">
+ </div>
+</form>-->
+
+
+
+
+
+<!--                                                OTHER IMPLEMENTATION                                            -->
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading" *ngIf="form.pristine">
+     <h4>{{pageTitle}}</h4>
+  </div>
+  <div class="panel-heading" *ngIf="!form.pristine">
+     <h4><i>Adding Contact Information...</i></h4>
+  </div>
+<div> <h3></h3></div>
+<div></div>
+<div></div>
+<div></div>
+<div class="container">
+    <form #form="ngForm" class="form-horizontal" novalidate>
+      <div class="form-group">
+           <label for="first name" >First Name: </label>
+           <input id="firstNameId" type="text" class="form-control" name="firstname" ngModel>
+      </div>
+      <div class="form-group">
+           <label for="last name" >Last Name: </label>
+           <input id="lastNameId" type="text" class="form-control" name="lastname" ngModel>
+      </div>
+      <div class="form-group">
+           <label for="message" >Message: </label>
+           <input id="messageId" type="text" class="form-control" name="message" ngModel>
+      </div>
+      <div class="checkbox">
+        <label>
+            <input type="checkbox" name="is-Previous-Buyer" ngModel>Are you a Previous Buyer?
+        </label>
+      </div>
+
+     <label>Action</label>
+     <div class="radio">
+         <label>
+             <input type="radio" name="item-action" value="return" checked>
+             Return the product.Ask for refund.
+             </label>
+     </div>
+     <div class="radio">
+       <label>
+        <input type="radio" name="item-action" value="replacement">
+            Replace the product.
+       </label>
+     </div>
+    <div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="reset">Clear Form</button>
+    </div>
+
+</form>
+</div>
+<div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+
+
+
+
+<!--                                                OTHER IMPLEMENTATION                                            -->
+
+  <!--<div class="row">
+         <div>
+             <label for="first name" class="col-sm-4" id="label">First Name: </label>
+             <input type="text" class="col-sm-5" placeholder="First Name" name="First Name" ngModel required="true"></div>
+       </div>
+       <div class="row">
+         <div>
+             <label for="last name" class="col-sm-4" id="label">Last Name: </label>
+             <input type="text" class="col-sm-5" placeholder="Last Name" name="Last Name" ngModel required="true"></div>
+        </div>
+           <div class="row">
+             <div>
+                 <label for="message" class="col-sm-4" id="label">Message: </label>
+                 <input type="textarea"  class="col-sm-5" placeholder="Message" name="Message" ngModel maxlength="250" minlength="10"></div>
+            </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="reset">Clear Form</button>-->
+
+
+

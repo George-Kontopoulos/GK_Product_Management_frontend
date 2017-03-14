@@ -1,0 +1,159 @@
+ <!--<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>-->
+
+    <!--<div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i>Back
+        </a>
+    </div>-->
+ <!--</div>-->
+ <div *ngIf='product'>
+<div class='panel panel-primary' *ngIf='!this.showForm'>
+    <div class='panel-heading' style='font-size:large' >
+        <!--{{pageTitle + ': ' + product.name}}-->
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{product.name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Code:</div>
+                    <div class='col-md-6'>{{product.code}}</div>
+                </div>
+                <!--<div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{product.description}}</div>
+                </div>-->
+                <div class='row'>
+                    <div class='col-md-3'>Availability:</div>
+                    <div class='col-md-6'>{{product.available}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Price:</div>
+                    <div class='col-md-6'>{{product.price|currency:'USD':true}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>7 Star Rating:</div>
+                    <div class='col-md-6'>
+                        <ai-star [rating]='product.rating'
+                                (ratingClicked)='onRatingClicked($event)'>
+                        </ai-star>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class='col-md-6'>
+                <img class='center-block img-responsive'
+                     [style.width.px]='200'
+                     [style.margin.px]='2'
+                     [src]='product.imageUrl'
+                     [title]='product.productName'>
+            </div>-->
+        </div>
+    </div>
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        <!--<button class='btn btn-default' (click)='onUpdate()' style='width:180px'>
+            {{showForm? 'Don't Update' : 'Update'}} Product<i class='glyphicon glyphicon-chevron-right'></i>
+        </button>-->
+        <button class='btn btn-default' (click)='onSwitchForms()' >
+          Update Product  <i class='glyphicon glyphicon-chevron-right'></i>
+       </button>
+    </div>
+</div>
+</div>
+
+
+<div *ngIf='product'>
+<div class='panel panel-primary' *ngIf='this.showForm'>
+    <div class='panel-heading' style='font-size:large' >
+        <!--{{pageTitle + ': ' + product.name}}-->
+        {{pageTitle}}
+    </div>
+
+<div >
+<form class="form-horizontal" (ngSubmit)="onUpdate(updateForm)" [formGroup]="updateForm" *ngIf='this.showForm'>
+ <!--<div class="row" >
+  <div><label for="id" class="col-sm-4" id="label"> </label>
+  <input formControlName="id" type="text" [(ngModel)]="product.id" class="col-sm-5" required="true" style="visibility:hidden"></div>
+  </div>-->
+ 
+ <div class="row">
+     <input style="visibility: hidden">
+ </div>
+
+  <div class="row">
+  <div><label for="name" class="col-sm-4" id="label">Product Name: </label>
+  <input formControlName="name" type="text" [(ngModel)]="product.name" class="col-sm-5" required="true"></div>
+  </div>
+  
+  <div class="row" >
+  <div><label for="node" class="col-sm-4" id="label">Product Code: </label>
+    <input formControlName="code" type="text" [(ngModel)]="product.code" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="available" class="col-sm-4" id="label">Available from: </label>
+    <input formControlName="available" type="datetime" [(ngModel)]="product.available" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="price" class="col-sm-4" id="label">Price: </label>
+  <input formControlName="price" type="number" [(ngModel)]="product.price" class="col-sm-5" required="true"></div>
+  </div>
+
+  <div class="row" >
+  <div><label for="rating" class="col-sm-4" id="label">Rating: </label>
+  <input formControlName="rating" type="number" [(ngModel)]="product.rating" class="col-sm-5" required="true">
+  </div>
+  </div>
+<div class="row">
+     <input style="visibility: hidden">
+ </div>
+  <div class="row">
+    <div class=" col-sm-offset-4 col-xs-4">
+      <button type="submit" class="btn btn-primary" id="submit">Update Product</button>
+      <button type="reset" class="btn btn-primary" id="reset">Clear Form</button>
+    </div>
+  
+  </div> 
+
+<div class="row">
+     <input style="visibility: hidden">
+ </div>
+</form>
+
+</div>
+    <div class='panel-footer'>
+        <!--<a [routerLink]="['/product',product.id]" >
+                        {{product.name}}</a>-->
+        <a  class='btn btn-default' (click)='onCancel()'  style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Cancel
+        </a>
+        <!--<button class='btn btn-default' (click)='onUpdate()' style='width:180px'>
+            {{showForm? 'Don't Update' : 'Update'}} Product<i class='glyphicon glyphicon-chevron-right'></i>
+        </button>-->
+        <!--<button class='btn btn-default' (click)='onUpdate()' >
+         Don't Update Product  <i class='glyphicon glyphicon-chevron-right'></i>
+       </button>-->
+    </div>
+    </div>
+</div>
+
+
+
+
+ <!--<button class='btn btn-default' (click)='onUpdate()' >
+         {{showForm? 'Dont Update' : 'Update'}} Product  <i class='glyphicon glyphicon-chevron-right'></i>
+       </button>-->
+
+       
